@@ -374,7 +374,7 @@ html:not(.scrollable) {
 
 .hero__location {
   margin: 0;
-  font-family: "Noto Serif Georgian", serif;
+  font-family: "DM Constitution", "Noto Serif Georgian", serif;
   font-size: 0.8rem;
   color: var(--ink-soft);
   text-align: center;

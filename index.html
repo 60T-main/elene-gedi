@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:title" content="ელენე & გედი">
+  <meta name="og:description" content="ელენე & გედი">
+  <meta name="og:image" content="https://60t-main.github.io/elene-gedi/weddsite.png">
+  <meta name="og:url" content="https://60t-main.github.io/elene-gedi">
+  <meta name="og:type" content="website">
+  <meta name="og:locale" content="ka_GE">
+  <meta name="og:site_name" content="ელენე & გედი">
+  <meta name="og:image:width" content="1024">
+  <title>ელენე & გედი</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ ENVELOPE ═══ -->
+  <div class="env-wrap" id="env-wrap" role="button" tabindex="0" aria-label="გახსენი მოსაწვევი">
+    <div class="env-wax">
+      <img src="wax.png" alt="" aria-hidden="true">
+    </div>
+    <div class="env-part env-part--top"></div>
+    <div class="env-part env-part--bottom"></div>
+    <div class="env-part env-part--left"></div>
+    <div class="env-part env-part--right"></div>
+    <p class="env-hint" aria-hidden="true">შეეხე გასახსნელად</p>
+  </div>
+
+  <!-- ═══ PAGE (hidden until envelope opens) ═══ -->
+  <div id="page-content" class="page-content">
+
+  <div class="mobile-prompt" role="alert" aria-live="polite">
+    <div class="mobile-prompt__card">
+      <img src="weddsite.png" alt="Weddsite" class="mobile-prompt__logo">
+      <p class="mobile-prompt__heading">გახსენით ტელეფონზე</p>
+      <p class="mobile-prompt__body">ეს მოსაწვევი შექმნილია მობილური მოწყობილობისთვის. გთხოვთ გახსენით ტელეფონზე.</p>
+    </div>
+  </div>
+
+  <main class="page">
+    <section class="hero" aria-label="Wedding invitation hero">
+      <div class="hero__inner">
+
+        <figure class="hero__art">
+          <div class="hero__art-frame">
+            <img src="couple.jpg" alt="Elene and Gela illustration" class="hero__art-image">
+          </div>
+        </figure>
+
+        <div class="hero__names" id="hero-names" aria-label="ელენე და გედი"></div>
+
+        <p class="hero__eyebrow">გეპატიჟებით ჩვენს ქორწილში</p>
+        <p class="hero__location">ოტიუმი · კუს ტბა · თბილისი</p>
+        <div class="description__band hero__band-date" aria-hidden="true">
+          <img src="tulips-border.png" alt="" class="description__band-tulips description__band-tulips--left">
+          <h2 class="description__title">6 ივნისი, 2026</h2>
+          <img src="tulips-border.png" alt="" class="description__band-tulips description__band-tulips--right">
+        </div>
+      </div>
+    </section>
+    <section class="tl-section" id="timeline" aria-label="დღის განრიგი">
+      <div class="tl-section__inner">
+
+        <header class="tl-header">
+          <img src="golden-circles.png" alt="" class="tl-header__dots" aria-hidden="true">
+          <h2 class="tl-header__title">დღის განრიგი</h2>
+          <img src="golden-circles.png" alt="" class="tl-header__dots tl-header__dots--flip" aria-hidden="true">
+        </header>
+
+        <div class="tl-track">
+          <div class="tl-spine" aria-hidden="true">
+            <div class="tl-indicator" id="tl-indicator"></div>
+          </div>
+
+          <span class="tl-star tl-star--1" aria-hidden="true">✦</span>
+          <span class="tl-star tl-star--2" aria-hidden="true">✧</span>
+          <span class="tl-star tl-star--3" aria-hidden="true">✦</span>
+          <span class="tl-star tl-star--4" aria-hidden="true">✧</span>
+          <span class="tl-star tl-star--5" aria-hidden="true">✦</span>
+          <span class="tl-star tl-star--6" aria-hidden="true">✧</span>
+
+          <button class="tl-item" data-popup="ceremony" type="button">
+            <span class="tl-item__node" aria-hidden="true"></span>
+            <span class="tl-item__card">
+              <span class="tl-item__time">16:00</span>
+              <span class="tl-item__title">ჯვრისწერა</span>
+              <span class="tl-item__sub">სიონის საკათედრო ტაძარი</span>
+            </span>
+          </button>
+
+          <button class="tl-item" data-popup="arrival" type="button">
+            <span class="tl-item__node" aria-hidden="true"></span>
+            <span class="tl-item__card">
+              <span class="tl-item__time">17:00-დან</span>
+              <span class="tl-item__title">მიღება</span>
+              <span class="tl-item__sub">ოტიუმი</span>
+            </span>
+          </button>
+
+          <button class="tl-item" data-popup="signing" type="button">
+            <span class="tl-item__node" aria-hidden="true"></span>
+            <span class="tl-item__card">
+              <span class="tl-item__time">17:30</span>
+              <span class="tl-item__title">ხელის მოწერა</span>
+              <span class="tl-item__sub">ოტიუმი</span>
+            </span>
+          </button>
+
+          <button class="tl-item" data-popup="dinner" type="button">
+            <span class="tl-item__node" aria-hidden="true"></span>
+            <span class="tl-item__card">
+              <span class="tl-item__time">18:00</span>
+              <span class="tl-item__title">ვახშამი</span>
+              <span class="tl-item__sub">ოტიუმი</span>
+            </span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tulip separator -->
+    <div class="tulip-sep" aria-hidden="true">
+      <img src="tulips-border-2.png" alt="" class="tulip-sep__img">
+    </div>
+
+    <!-- RSVP section -->
+    <section class="rsvp" id="rsvp" aria-label="დასწრების დადასტურება">
+      <div class="rsvp__inner">
+
+        <header class="rsvp__header">
+          <img src="golden-circles.png" alt="" class="rsvp__header-dots" aria-hidden="true">
+          <h2 class="rsvp__title">მოხვალთ?</h2>
+          <img src="golden-circles.png" alt="" class="rsvp__header-dots rsvp__header-dots--flip" aria-hidden="true">
+        </header>
+
+        <p class="rsvp__sub">გთხოვთ, დაგვიდასტუროთ თქვენი დასწრება <strong>10 მაისამდე</strong></p>
+
+        <form class="rsvp__form" id="rsvp-form" novalidate>
+
+          <div class="rsvp__row">
+            <div class="rsvp__field">
+              <label class="rsvp__label" for="rsvp-name">სახელი</label>
+              <input class="rsvp__input" id="rsvp-name" name="name" type="text" autocomplete="given-name" placeholder="ნინო" required>
+            </div>
+            <div class="rsvp__field">
+              <label class="rsvp__label" for="rsvp-surname">გვარი</label>
+              <input class="rsvp__input" id="rsvp-surname" name="surname" type="text" autocomplete="family-name" placeholder="ბერიძე">
+            </div>
+          </div>
+
+          <fieldset class="rsvp__fieldset">
+            <legend class="rsvp__legend">დაესწრები?</legend>
+            <div class="rsvp__radio-group">
+              <label class="rsvp__radio-card">
+                <input type="radio" name="attendance" value="yes" required>
+                <span class="rsvp__radio-face">
+                  <span class="rsvp__radio-emoji" aria-hidden="true">✦</span>
+                  <span class="rsvp__radio-text">მოვდივარ</span>
+                </span>
+              </label>
+              <label class="rsvp__radio-card">
+                <input type="radio" name="attendance" value="no">
+                <span class="rsvp__radio-face">
+                  <span class="rsvp__radio-emoji" aria-hidden="true">✧</span>
+                  <span class="rsvp__radio-text">ვერ მოვდივარ</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="rsvp__fieldset rsvp__fieldset--guests" id="rsvp-guests-fieldset">
+            <label class="rsvp__label" for="rsvp-guest-count">სტუმრების რაოდენობა</label>
+            <input class="rsvp__input rsvp__input--number" id="rsvp-guest-count" name="guestCount"
+              type="number" min="1" max="100" placeholder="1">
+          </div>
+
+          <button class="rsvp__submit" type="submit" id="rsvp-submit">გაგზავნა</button>
+          <p class="rsvp__status" id="rsvp-status" aria-live="polite"></p>
+
+        </form>
+
+        <!-- Thank-you state (shown after successful submit) -->
+        <div class="rsvp__thankyou" id="rsvp-thankyou" aria-hidden="true">
+          <span class="rsvp__thankyou-star" aria-hidden="true">✦</span>
+          <p class="rsvp__thankyou-text">მადლობა!<br>შენი პასუხი მიღებულია.</p>
+          <span class="rsvp__thankyou-star" aria-hidden="true">✦</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Closing message -->
+    <div class="closing">
+      <p class="closing__line closing__line--em">გელოდებით!</p>
+      <p class="closing__line">ერთად შევქმნათ საუკეთესო მოგონებები</p>
+      <p class="closing__sig">დიდი სიყვარულით,<br>ელენე &amp; გედი</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://www.instagram.com/weddsites/" target="_blank" rel="noopener" class="footer__credit">
+        <img src="weddsite.png" alt="Weddsite" class="footer__logo">
+        <span>Made with ♥ by Weddsite</span>
+      </a>
+    </footer>
+
+  </main>
+
+  <div class="tl-overlay" id="tl-overlay" aria-hidden="true">
+    <div class="tl-popup" role="dialog" aria-modal="true" aria-labelledby="tl-popup-title">
+      <button class="tl-popup__close" id="tl-popup-close" type="button" aria-label="დახურვა">&times;</button>
+      <div class="tl-popup__time-row">
+        <span class="tl-popup__time" id="tl-popup-time"></span>
+        <span class="tl-popup__divider" aria-hidden="true"></span>
+      </div>
+      <h3 class="tl-popup__title" id="tl-popup-title"></h3>
+      <a class="tl-popup__location" id="tl-popup-location" target="_blank" rel="noopener">
+        <svg class="tl-popup__pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="currentColor"/>
+        </svg>
+        <span id="tl-popup-location-text"></span>
+      </a>
+      <p class="tl-popup__body" id="tl-popup-body"></p>
+      <img src="golden-circles.png" alt="" class="tl-popup__deco" aria-hidden="true">
+    </div>
+  </div>
+
+  </div><!-- /page-content -->
+
+  <script src="script.js"></script>
+</body>
+</html>

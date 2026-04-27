@@ -54,8 +54,8 @@
 
         <div class="hero__names" id="hero-names" aria-label="ელენე და გედი"></div>
 
-        <p class="hero__eyebrow">გეპატიჟებით ჩვენ ქორწილში</p>
-        <p class="hero__location">ოტიუმი · კუს ტბა · თბილისი</p>
+        <p class="hero__eyebrow">გეპატიჟებით ჩვენს ქორწილში</p>
+        <p class="hero__location">ოტიუმი · კუს ტბის ასახვევი</p>
         <div class="description__band hero__band-date" aria-hidden="true">
           <img src="tulips-border.png" alt="" class="description__band-tulips description__band-tulips--left">
           <h2 class="description__title">6 ივნისი, 2026</h2>
@@ -66,11 +66,11 @@
     <section class="tl-section" id="timeline" aria-label="დღის განრიგი">
       <div class="tl-section__inner">
 
-        <header class="tl-header">
+        <!-- <header class="tl-header">
           <img src="golden-circles.png" alt="" class="tl-header__dots" aria-hidden="true">
           <h2 class="tl-header__title">დღის განრიგი</h2>
           <img src="golden-circles.png" alt="" class="tl-header__dots tl-header__dots--flip" aria-hidden="true">
-        </header>
+        </header> -->
 
         <div class="tl-track">
           <div class="tl-spine" aria-hidden="true">
@@ -107,7 +107,7 @@
             <span class="tl-item__card">
               <span class="tl-item__time">17:30</span>
               <span class="tl-item__title">ხელის მოწერა</span>
-              <span class="tl-item__sub">ოტიუმი</span>
+
             </span>
           </button>
 
@@ -116,7 +116,7 @@
             <span class="tl-item__card">
               <span class="tl-item__time">18:00</span>
               <span class="tl-item__title">ვახშამი</span>
-              <span class="tl-item__sub">ოტიუმი</span>
+
             </span>
           </button>
 
@@ -132,26 +132,20 @@
     <!-- RSVP section -->
     <section class="rsvp" id="rsvp" aria-label="დასწრების დადასტურება">
       <div class="rsvp__inner">
-
+<!-- 
         <header class="rsvp__header">
           <img src="golden-circles.png" alt="" class="rsvp__header-dots" aria-hidden="true">
           <h2 class="rsvp__title">მოხვალთ?</h2>
           <img src="golden-circles.png" alt="" class="rsvp__header-dots rsvp__header-dots--flip" aria-hidden="true">
-        </header>
+        </header> -->
 
-        <p class="rsvp__sub">გთხოვთ, დაგვიდასტუროთ თქვენი დასწრება <strong>10 მაისამდე</strong></p>
+        <p class="rsvp__sub">გთხოვთ, დაგვიდასტუროთ თქვენი დასწრება <span style="font-weight: bolder; font-size: 1.2rem;">10 მაისამდე</span></p>
 
         <form class="rsvp__form" id="rsvp-form" novalidate>
 
-          <div class="rsvp__row">
-            <div class="rsvp__field">
-              <label class="rsvp__label" for="rsvp-name">სახელი</label>
-              <input class="rsvp__input" id="rsvp-name" name="name" type="text" autocomplete="given-name" placeholder="ნინო" required>
-            </div>
-            <div class="rsvp__field">
-              <label class="rsvp__label" for="rsvp-surname">გვარი</label>
-              <input class="rsvp__input" id="rsvp-surname" name="surname" type="text" autocomplete="family-name" placeholder="ბერიძე">
-            </div>
+          <div class="rsvp__field">
+            <label class="rsvp__label" for="rsvp-fullname">სახელი და გვარი</label>
+            <input class="rsvp__input" id="rsvp-fullname" name="fullName" type="text" autocomplete="name" placeholder="ნინო ბერიძე" required>
           </div>
 
           <fieldset class="rsvp__fieldset">
@@ -174,11 +168,23 @@
             </div>
           </fieldset>
 
-          <div class="rsvp__fieldset rsvp__fieldset--guests" id="rsvp-guests-fieldset">
-            <label class="rsvp__label" for="rsvp-guest-count">სტუმრების რაოდენობა</label>
-            <input class="rsvp__input rsvp__input--number" id="rsvp-guest-count" name="guestCount"
-              type="number" min="1" max="100" placeholder="1">
-          </div>
+          <fieldset class="rsvp__fieldset rsvp__fieldset--guests" id="rsvp-guests-fieldset">
+            <legend class="rsvp__legend">სტუმრების რაოდენობა</legend>
+            <div class="rsvp__radio-group rsvp__radio-group--guests">
+              <label class="rsvp__radio-card rsvp__radio-card--sm">
+                <input type="radio" name="guestCount" value="1">
+                <span class="rsvp__radio-face">
+                  <span class="rsvp__radio-text">1 სტუმარი</span>
+                </span>
+              </label>
+              <label class="rsvp__radio-card rsvp__radio-card--sm">
+                <input type="radio" name="guestCount" value="2">
+                <span class="rsvp__radio-face">
+                  <span class="rsvp__radio-text">2 სტუმარი</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
 
           <button class="rsvp__submit" type="submit" id="rsvp-submit">გაგზავნა</button>
           <p class="rsvp__status" id="rsvp-status" aria-live="polite"></p>

@@ -273,28 +273,24 @@
       title: "ჯვრისწერა",
       location: "სიონის საკათედრო ტაძარი",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Sioni+Cathedral+Tbilisi",
-      body: "ჩვენი დღის პირველი და ყველაზე განსაკუთრებული მომენტი - ჯვრისწერა სიონის ტაძარში. გთხოვთ, დროულად მოხვიდეთ."
     },
     arrival: {
       time: "17:00-დან",
       title: "მიღება",
       location: "ოტიუმი, კუს ტბა",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Otium+Turtle+Lake+Tbilisi",
-      body: "სტუმრები დახვედრა ოტიუმში - სასიამოვნო ატმოსფეროში, მუსიკისა და სასმელების თანხლებით."
     },
     signing: {
       time: "17:30",
       title: "ხელის მოწერა",
       location: "ოტიუმი, კუს ტბა",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Otium+Turtle+Lake+Tbilisi",
-      body: "ელენე და გედი ოფიციალურად დაქორწინდებიან. ეს მომენტი სამუდამოდ შეაერთებს ორ ოჯახს."
     },
     dinner: {
       time: "18:00",
       title: "ვახშამი",
       location: "ოტიუმი, კუს ტბა",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Otium+Turtle+Lake+Tbilisi",
-      body: "ერთად ვიზეიმებთ ამ განსაკუთრებულ ღამეს - სუფრა, ცეკვა, სიხარული და სიყვარული."
     }
   };
 
@@ -380,6 +376,7 @@
   var statusEl       = document.getElementById("rsvp-status");
   var thankyou       = document.getElementById("rsvp-thankyou");
   var guestsFieldset = document.getElementById("rsvp-guests-fieldset");
+  var guestCountRadios = form ? form.querySelectorAll("input[name='guestCount']") : [];
 
   if (!form) return;
 
@@ -389,6 +386,9 @@
     radio.addEventListener("change", function () {
       if (radio.value === "no") {
         guestsFieldset.classList.add("hidden");
+        guestCountRadios.forEach(function (guestRadio) {
+          guestRadio.checked = false;
+        });
       } else {
         guestsFieldset.classList.remove("hidden");
       }
@@ -420,17 +420,23 @@
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    var name       = document.getElementById("rsvp-name").value.trim();
-    var surname    = document.getElementById("rsvp-surname").value.trim();
+    var fullName   = document.getElementById("rsvp-fullname").value.trim();
+    var nameParts  = fullName.split(/\s+/).filter(Boolean);
+    var name       = nameParts.shift() || "";
+    var surname    = nameParts.join(" ");
     var attendance = form.querySelector("input[name='attendance']:checked");
-    var guestCount = document.getElementById("rsvp-guest-count");
+    var guestCount = form.querySelector("input[name='guestCount']:checked");
 
-    if (!name) {
-      statusEl.textContent = "გთხოვთ, შეიყვანოთ სახელი.";
+    if (!fullName) {
+      statusEl.textContent = "გთხოვთ, შეიყვანოთ სახელი და გვარი.";
       return;
     }
     if (!attendance) {
       statusEl.textContent = "გთხოვთ, აირჩიოთ პასუხი.";
+      return;
+    }
+    if (attendance.value === "yes" && !guestCount) {
+      statusEl.textContent = "გთხოვთ, აირჩიოთ სტუმრების რაოდენობა.";
       return;
     }
 
@@ -442,7 +448,7 @@
         name:       name,
         surname:    surname,
         attendance: attendance.value,
-        guestCount: (guestCount && guestCount.value !== "") ? guestCount.value : undefined
+        guestCount: guestCount ? guestCount.value : undefined
       });
 
       form.setAttribute("aria-hidden", "true");

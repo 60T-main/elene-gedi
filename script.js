@@ -369,7 +369,7 @@
 /* ─── RSVP form ───────────────────────────────────────────────────────── */
 (function () {
   var API_URL    = "https://weddsites-backend.vercel.app/api/rsvp";
-  var PROJECT_ID = "elene-gela-2026";
+  var PROJECT_ID = "elene-gedi-2026";
 
   var form           = document.getElementById("rsvp-form");
   var submitBtn      = document.getElementById("rsvp-submit");
